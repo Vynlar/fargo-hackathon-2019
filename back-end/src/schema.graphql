@@ -8,7 +8,7 @@ type AuthPayload {
 }
 
 type HelpRequest {
-  fulfiller: User!
+  fulfiller: User
   healthScore: Int!
   id: ID!
   owner: User!

@@ -50,7 +50,7 @@ export interface NexusGenFieldTypes {
     user: NexusGenRootTypes['User']; // User!
   }
   HelpRequest: { // field return type
-    fulfiller: NexusGenRootTypes['User']; // User!
+    fulfiller: NexusGenRootTypes['User'] | null; // User
     healthScore: number; // Int!
     id: string; // ID!
     owner: NexusGenRootTypes['User']; // User!

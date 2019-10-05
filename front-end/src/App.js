@@ -16,6 +16,7 @@ import Home from 'Views/Home';
 import Login from 'Views/Login';
 import Private from 'Views/Private';
 import UserProfile from 'Views/UserProfile';
+import Main from 'Views/Main';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
-              <PrivateRoute exact path="/private" component={Private} />
+              <Route exact path="/main" component={Main} />
               <PrivateRoute
                 exact
                 path="/private/user/:userId"
