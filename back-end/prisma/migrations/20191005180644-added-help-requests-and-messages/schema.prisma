@@ -18,11 +18,26 @@ model User {
   name              String?
   helpRequests      HelpRequest[] @relation("helpRequests")
   fulfilledRequests HelpRequest[] @relation("fulfilled")
+  messages          Message[]
 }
 
 model HelpRequest {
-  id        String @default(cuid()) @id
-  owner     User   @relation("helpRequests")
-  health    Int
-  fulfiller User?  @relation("fulfilled")
+  id        String   @default(cuid()) @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  owner     User?     @relation("helpRequests")
+  fulfiller User?     @relation("fulfilled")
+  matched   Boolean
+  messages  Message[]
+}
+
+model Message {
+  id        String   @default(cuid()) @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  body    String
+  owner   User
+  request HelpRequest
 }

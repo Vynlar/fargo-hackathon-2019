@@ -2,6 +2,7 @@ import { compare, hash } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import { idArg, mutationType, stringArg, intArg } from "nexus";
 import { APP_SECRET, getUserId } from "../utils";
+import * as R from "ramda";
 
 export const Mutation = mutationType({
   definition(t) {
@@ -61,16 +62,124 @@ export const Mutation = mutationType({
         healthScore: intArg({ nullable: false })
       },
       resolve: async (parent, { healthScore }, context) => {
+        const userId = getUserId(context);
+
+        // They are the one in need
         if (healthScore <= 2) {
-          // They are the one in need
-          const userId = getUserId(context);
-          const newRequest = await context.photon.helpRequests.create({
-            data: { owner: { connect: { id: userId } }, health: healthScore }
-          });
-          return newRequest;
+          // if there are open fulfillers, connect them
+          const openFulfilRequests = R.pipe(
+            R.filter(
+              R.pipe(
+                R.prop("fulfiller"),
+                R.compose(
+                  R.not,
+                  R.isNil
+                )
+              )
+            ),
+            R.reject(
+              R.pipe(
+                R.path(["fulfiller", "id"]),
+                R.equals(userId)
+              )
+            )
+          )(
+            await context.photon.helpRequests.findMany({
+              where: { matched: false },
+              include: { fulfiller: true }
+            })
+          );
+
+          console.log(openFulfilRequests);
+
+          if (openFulfilRequests.length > 0) {
+            // If there is an open fulfiller
+            return context.photon.helpRequests.update({
+              where: { id: openFulfilRequests[0].id },
+              data: {
+                owner: { connect: { id: userId } },
+                matched: true
+              }
+            });
+          } else {
+            return context.photon.helpRequests.create({
+              data: {
+                owner: { connect: { id: userId } },
+                matched: false
+              }
+            });
+          }
         } else {
           // They are the fulfiller
+          const openNeedRequests = R.pipe(
+            R.filter(
+              R.pipe(
+                R.prop("owner"),
+                R.compose(
+                  R.not,
+                  R.isNil
+                )
+              )
+            ),
+            R.reject(
+              R.pipe(
+                R.path(["owner", "id"]),
+                R.equals(userId)
+              )
+            )
+          )(
+            await context.photon.helpRequests.findMany({
+              where: { matched: false },
+              include: { owner: true }
+            })
+          );
+
+          if (openNeedRequests.length > 0) {
+            return context.photon.helpRequests.update({
+              where: {
+                id: openNeedRequests[0].id
+              },
+              data: {
+                fulfiller: { connect: { id: userId } },
+                matched: true
+              }
+            });
+          } else {
+            return context.photon.helpRequests.create({
+              data: {
+                fulfiller: { connect: { id: userId } },
+                matched: false
+              }
+            });
+          }
         }
+      }
+    });
+
+    t.field("sendMessage", {
+      type: "Message",
+      args: {
+        helpRequestId: idArg(),
+        body: stringArg()
+      },
+      resolve: (parent, { helpRequestId, body }, context) => {
+        const userId = getUserId(context);
+        return context.photon.messages.create({
+          data: {
+            body,
+            request: { connect: { id: helpRequestId } },
+            owner: { connect: { id: userId } }
+          }
+        });
+      }
+    });
+
+    t.boolean("clearAlRequests", {
+      resolve: async (parent, args, context) => {
+        await context.photon.helpRequests.deleteMany({
+          where: { id: { contains: "" } }
+        });
+        return true;
       }
     });
   }
