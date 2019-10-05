@@ -1,0 +1,114 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateModel",
+      "name": "HelpRequest",
+      "embedded": false
+    },
+    {
+      "stepType": "DeleteModel",
+      "name": "Post"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "name": "helpRequests",
+      "type": {
+        "Relation": {
+          "to": "HelpRequest",
+          "to_fields": [],
+          "name": "helpRequests",
+          "on_delete": "None"
+        }
+      },
+      "arity": "list",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "name": "fulfilledRequests",
+      "type": {
+        "Relation": {
+          "to": "HelpRequest",
+          "to_fields": [],
+          "name": "fulfilled",
+          "on_delete": "None"
+        }
+      },
+      "arity": "list",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "HelpRequest",
+      "name": "id",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": false,
+      "id": {
+        "strategy": "Auto",
+        "sequence": null
+      },
+      "default": {
+        "Expression": [
+          "cuid",
+          "String",
+          []
+        ]
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "HelpRequest",
+      "name": "owner",
+      "type": {
+        "Relation": {
+          "to": "User",
+          "to_fields": [
+            "id"
+          ],
+          "name": "helpRequests",
+          "on_delete": "None"
+        }
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "HelpRequest",
+      "name": "health",
+      "type": {
+        "Base": "Int"
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "HelpRequest",
+      "name": "fulfiller",
+      "type": {
+        "Relation": {
+          "to": "User",
+          "to_fields": [
+            "id"
+          ],
+          "name": "fulfilled",
+          "on_delete": "None"
+        }
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "DeleteField",
+      "model": "User",
+      "name": "posts"
+    }
+  ]
+}
