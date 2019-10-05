@@ -1,0 +1,10 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "env": {
+    "first_name": "Bobby",
+    "last_name": "Bobberson",
+    "name": "Bobby Bobberson",
+    "email": "bob123@gmail.com",
+    "password": "password"
+  }
+}

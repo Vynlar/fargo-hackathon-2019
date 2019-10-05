@@ -1,0 +1,111 @@
+{
+  "name": "bushel-starter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.12",
+    "@styled-system/css": "^5.0.11",
+    "@styled-system/prop-types": "^5.0.12",
+    "@types/yup": "^0.26.18",
+    "apollo-cache-inmemory": "^1.6.2",
+    "apollo-client": "^2.6.3",
+    "apollo-link": "^1.2.12",
+    "apollo-link-error": "^1.1.11",
+    "apollo-link-http": "^1.5.15",
+    "axios": "^0.19.0",
+    "emotion-theming": "^10.0.10",
+    "faker": "^4.1.0",
+    "formik": "^1.5.7",
+    "graphql": "^14.4.2",
+    "graphql-anywhere": "^4.2.4",
+    "graphql-tag": "^2.10.1",
+    "normalize.css": "^8.0.1",
+    "ramda": "^0.26.1",
+    "react": "^16.8.6",
+    "react-apollo": "^2.5.8",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "styled-system": "^5.0.10",
+    "yup": "^0.27.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:ci": "react-scripts test --watchAll=false",
+    "eject": "react-scripts eject",
+    "storybook": "NODE_PATH=src start-storybook -p 9009 -s public",
+    "build-storybook": "NODE_PATH=../src build-storybook -s public",
+    "lint": "eslint \"src/**/*.{ts,tsx,js}\"",
+    "lint:fix": "yarn lint --fix",
+    "cypress:open": "NODE_PATH=src cypress open",
+    "analyze": "yarn build && source-map-explorer 'build/static/js/*.js'"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      "last 2 Chrome version",
+      "last 2 ChromeAndroid version",
+      "last 2 Safari version",
+      "last 2 iOS version",
+      "last 2 Firefox version",
+      "last 2 FirefoxAndroid versions",
+      "last 2 Edge versions"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-notes": "^5.1.9",
+    "@storybook/addon-storyshots": "^5.1.9",
+    "@storybook/addon-viewport": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "@testing-library/react": "^8.0.4",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.0.10",
+    "@types/react": "^16.8.22",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-router-dom": "^4.3.4",
+    "@types/storybook__react": "^4.0.2",
+    "@types/styled-system__css": "^5.0.0",
+    "cypress": "3.3.2",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "husky": "^2.5.0",
+    "jest-dom": "^3.5.0",
+    "jest-emotion": "^10.0.11",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
+    "react-test-renderer": "^16.8.6",
+    "require-context.macro": "^1.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test:ci",
+      "pre-push": "lint-staged && yarn test:ci"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "yarn lint:fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "jest-emotion"
+    ]
+  }
+}

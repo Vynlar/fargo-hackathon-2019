@@ -1,0 +1,1474 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Layout|Box Basic box 1`] = `
+.emotion-0 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+<div
+  className="emotion-0"
+>
+  Hello world!
+</div>
+`;
+
+exports[`Storyshots Layout|Box Basic coloring 1`] = `
+.emotion-0 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: red;
+  color: hsl(0,0%,100%);
+}
+
+<div
+  className="emotion-0"
+  color="white"
+>
+  Hello world!
+</div>
+`;
+
+exports[`Storyshots Layout|Box Layout 1`] = `
+.emotion-0 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 4px;
+  background-color: #f2bc23;
+  color: hsl(0,0%,100%);
+  height: 300px;
+}
+
+<div
+  className="emotion-0"
+  color="white"
+  height={300}
+>
+  Hello world!
+</div>
+`;
+
+exports[`Storyshots Layout|Box Theme coloring 1`] = `
+.emotion-0 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #f2bc23;
+  color: hsl(0,0%,100%);
+}
+
+<div
+  className="emotion-0"
+  color="white"
+>
+  Hello world!
+</div>
+`;
+
+exports[`Storyshots Layout|FlexBox Basic box 1`] = `
+.emotion-0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+<div
+  className="emotion-0"
+>
+  Hello world!
+</div>
+`;
+
+exports[`Storyshots Layout|FlexBox Position children 1`] = `
+.emotion-0 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #f2bc23;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div
+  className="emotion-0"
+>
+  <p>
+    Hello
+  </p>
+  <p>
+    World
+  </p>
+</div>
+`;
+
+exports[`Storyshots Layout|FlexBox column 1`] = `
+.emotion-0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  className="emotion-0"
+>
+  <p>
+    This is on top
+  </p>
+  <p>
+    This is on bottom
+  </p>
+</div>
+`;
+
+exports[`Storyshots Theme|Color Swatches 1`] = `
+.emotion-21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-20 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-1 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.emotion-0 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: #f2bc23;
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.emotion-2 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: wheat;
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.emotion-4 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: hsl(0,0%,100%);
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.emotion-6 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: hsl(0,0%,95%);
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.emotion-8 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: hsl(0,0%,80%);
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.emotion-10 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: hsl(0,0%,65%);
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.emotion-12 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: hsl(0,0%,50%);
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.emotion-14 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: hsl(0,0%,35%);
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.emotion-16 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: hsl(0,0%,20%);
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.emotion-18 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  background-color: hsl(0,0%,10%);
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+<div
+  className="emotion-21"
+>
+  <h1>
+    COLORS
+  </h1>
+  <div
+    className="emotion-20"
+  >
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        primary
+      </span>
+      <div
+        className="emotion-0"
+        height={128}
+        width={128}
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        neutral
+      </span>
+      <div
+        className="emotion-2"
+        height={128}
+        width={128}
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        white
+      </span>
+      <div
+        className="emotion-4"
+        height={128}
+        width={128}
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        lightestGrey
+      </span>
+      <div
+        className="emotion-6"
+        height={128}
+        width={128}
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        lighterGrey
+      </span>
+      <div
+        className="emotion-8"
+        height={128}
+        width={128}
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        lightGrey
+      </span>
+      <div
+        className="emotion-10"
+        height={128}
+        width={128}
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        grey
+      </span>
+      <div
+        className="emotion-12"
+        height={128}
+        width={128}
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        darkGrey
+      </span>
+      <div
+        className="emotion-14"
+        height={128}
+        width={128}
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        darkerGrey
+      </span>
+      <div
+        className="emotion-16"
+        height={128}
+        width={128}
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      <span
+        style={
+          Object {
+            "fontVariant": "small-caps",
+          }
+        }
+      >
+        black
+      </span>
+      <div
+        className="emotion-18"
+        height={128}
+        width={128}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Theme|Scales Font sizes 1`] = `
+.emotion-12 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.emotion-0 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: hsl(0,0%,65%);
+}
+
+.emotion-3 {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.emotion-5 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.emotion-7 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.emotion-9 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.emotion-11 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+<div
+  className="emotion-12"
+>
+  <span
+    className="emotion-1"
+    fontSize="0"
+  >
+    <span
+      className="emotion-0"
+      color="lightGrey"
+      fontSize={2}
+    >
+      0
+    </span>
+    <br />
+    The quick brown fox jumped over the lazy dog.
+  </span>
+  <span
+    className="emotion-3"
+    fontSize="1"
+  >
+    <span
+      className="emotion-0"
+      color="lightGrey"
+      fontSize={2}
+    >
+      1
+    </span>
+    <br />
+    The quick brown fox jumped over the lazy dog.
+  </span>
+  <span
+    className="emotion-5"
+    fontSize="2"
+  >
+    <span
+      className="emotion-0"
+      color="lightGrey"
+      fontSize={2}
+    >
+      2, body
+    </span>
+    <br />
+    The quick brown fox jumped over the lazy dog.
+  </span>
+  <span
+    className="emotion-7"
+    fontSize="3"
+  >
+    <span
+      className="emotion-0"
+      color="lightGrey"
+      fontSize={2}
+    >
+      3
+    </span>
+    <br />
+    The quick brown fox jumped over the lazy dog.
+  </span>
+  <span
+    className="emotion-9"
+    fontSize="4"
+  >
+    <span
+      className="emotion-0"
+      color="lightGrey"
+      fontSize={2}
+    >
+      4
+    </span>
+    <br />
+    The quick brown fox jumped over the lazy dog.
+  </span>
+  <span
+    className="emotion-11"
+    fontSize="5"
+  >
+    <span
+      className="emotion-0"
+      color="lightGrey"
+      fontSize={2}
+    >
+      5, header
+    </span>
+    <br />
+    The quick brown fox jumped over the lazy dog.
+  </span>
+</div>
+`;
+
+exports[`Storyshots Theme|Scales Sizes 1`] = `
+.emotion-36 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.emotion-2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-0 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 64px;
+}
+
+.emotion-1 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 0;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-4 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 2px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 4px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-10 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 8px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 16px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-16 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 32px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-19 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 64px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-22 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 128px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-25 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 256px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-28 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 512px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-34 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  background-color: #f2bc23;
+  height: 8px;
+  width: 1280px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div
+  className="emotion-36"
+>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      0
+    </div>
+    <div
+      className="emotion-1"
+      height={3}
+      width="0"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      1
+    </div>
+    <div
+      className="emotion-4"
+      height={3}
+      width="1"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      2
+    </div>
+    <div
+      className="emotion-7"
+      height={3}
+      width="2"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      3
+    </div>
+    <div
+      className="emotion-10"
+      height={3}
+      width="3"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      4
+    </div>
+    <div
+      className="emotion-13"
+      height={3}
+      width="4"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      5
+    </div>
+    <div
+      className="emotion-16"
+      height={3}
+      width="5"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      6
+    </div>
+    <div
+      className="emotion-19"
+      height={3}
+      width="6"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      7
+    </div>
+    <div
+      className="emotion-22"
+      height={3}
+      width="7"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      8
+    </div>
+    <div
+      className="emotion-25"
+      height={3}
+      width="8"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      9
+    </div>
+    <div
+      className="emotion-28"
+      height={3}
+      width="9"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      field
+    </div>
+    <div
+      className="emotion-16"
+      height={3}
+      width="field"
+    />
+  </div>
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-0"
+      width={64}
+    >
+      page
+    </div>
+    <div
+      className="emotion-34"
+      height={3}
+      width="page"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots UserForm Empty 1`] = `
+.emotion-1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: hsl(0,0%,50%);
+  margin-top: 8px;
+  margin-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.emotion-5 {
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 500px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  background-color: #f2bc23;
+  padding-left: 32px;
+  padding-right: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border-width: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: hsl(0,0%,100%);
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s,box-shadow 0.3s,-webkit-transform 0.3s;
+  -webkit-transition: background-color 0.3s,box-shadow 0.3s,transform 0.3s;
+  transition: background-color 0.3s,box-shadow 0.3s,transform 0.3s;
+}
+
+.emotion-4:hover {
+  background-color: hsl(0,0%,10%);
+  color: hsl(0,0%,100%);
+  box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+<form
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="emotion-5"
+  >
+    <div
+      className="emotion-1"
+    >
+      First name
+      <input
+        className="emotion-0"
+        name="first_name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder=""
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      Last name
+      <input
+        className="emotion-0"
+        name="last_name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder=""
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      className="emotion-4"
+      type="submit"
+    >
+      Save
+    </button>
+  </div>
+</form>
+`;
+
+exports[`Storyshots UserForm Prefilled 1`] = `
+.emotion-1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: hsl(0,0%,50%);
+  margin-top: 8px;
+  margin-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.emotion-5 {
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 500px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  background-color: #f2bc23;
+  padding-left: 32px;
+  padding-right: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border-width: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: hsl(0,0%,100%);
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s,box-shadow 0.3s,-webkit-transform 0.3s;
+  -webkit-transition: background-color 0.3s,box-shadow 0.3s,transform 0.3s;
+  transition: background-color 0.3s,box-shadow 0.3s,transform 0.3s;
+}
+
+.emotion-4:hover {
+  background-color: hsl(0,0%,10%);
+  color: hsl(0,0%,100%);
+  box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+<form
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="emotion-5"
+  >
+    <div
+      className="emotion-1"
+    >
+      First name
+      <input
+        className="emotion-0"
+        name="first_name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder=""
+        type="text"
+        value="Adrian"
+      />
+    </div>
+    <div
+      className="emotion-1"
+    >
+      Last name
+      <input
+        className="emotion-0"
+        name="last_name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder=""
+        type="text"
+        value="Aleixandre"
+      />
+    </div>
+    <button
+      className="emotion-4"
+      type="submit"
+    >
+      Save
+    </button>
+  </div>
+</form>
+`;
+
+exports[`Storyshots UserProfile Success 1`] = `"Loading..."`;
+
+exports[`Storyshots Views|Login form Login form 1`] = `
+.emotion-6 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-5 {
+  min-width: 0;
+  box-sizing: border-box;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.emotion-4 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0 {
+  text-transform: uppercase;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: hsl(0,0%,50%);
+  margin-top: 8px;
+  margin-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.emotion-3 {
+  background-color: #f2bc23;
+  padding-left: 32px;
+  padding-right: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border-width: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: hsl(0,0%,100%);
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s,box-shadow 0.3s,-webkit-transform 0.3s;
+  -webkit-transition: background-color 0.3s,box-shadow 0.3s,transform 0.3s;
+  transition: background-color 0.3s,box-shadow 0.3s,transform 0.3s;
+  margin-top: 16px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.emotion-3:hover {
+  background-color: hsl(0,0%,10%);
+  color: hsl(0,0%,100%);
+  box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+<div
+  className="emotion-6"
+>
+  <div
+    className="emotion-5"
+  >
+    <form
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="emotion-4"
+      >
+        <h1
+          className="emotion-0"
+        >
+          Login
+        </h1>
+        <input
+          autoFocus={true}
+          className="emotion-1"
+          data-cy="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Email"
+          type="email"
+          value=""
+        />
+        <input
+          className="emotion-1"
+          data-cy="password"
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <button
+          className="emotion-3"
+          data-cy="submit"
+          disabled={false}
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
