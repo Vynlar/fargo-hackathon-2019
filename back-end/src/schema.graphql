@@ -7,25 +7,44 @@ type AuthPayload {
   user: User!
 }
 
+"""DateTime"""
+scalar DateTime
+
 type HelpRequest {
   fulfiller: User
-  healthScore: Int!
+  id: ID!
+  matched: Boolean!
+  messages(after: String, before: String, first: Int, last: Int, skip: Int): [Message!]
+  owner: User
+}
+
+type Message {
+  body: String!
+  createdAt: DateTime!
   id: ID!
   owner: User!
+  request: HelpRequest!
+  updatedAt: DateTime!
 }
 
 type Mutation {
+  clearAlRequests: Boolean!
   login(email: String, password: String): AuthPayload!
+  sendMessage(body: String, helpRequestId: ID): Message!
   signup(email: String, name: String, password: String): AuthPayload!
   submitHelpRequest(healthScore: Int!): HelpRequest
 }
 
 type Query {
+  currentConversation: HelpRequest
+  helpRequests(matched: Boolean): [HelpRequest!]!
   me: User!
 }
 
 type User {
   email: String!
+  fulfilledRequests(after: String, before: String, first: Int, last: Int, skip: Int): [HelpRequest!]
+  helpRequests(after: String, before: String, first: Int, last: Int, skip: Int): [HelpRequest!]
   id: ID!
   name: String
 }

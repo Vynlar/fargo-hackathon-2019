@@ -1,5 +1,5 @@
-import { idArg, queryType, stringArg } from "nexus";
-import { getUserId } from "../utils";
+import { idArg, queryType, stringArg, booleanArg } from "nexus";
+import { getCurrentConversation, getUserId } from "../utils";
 
 export const Query = queryType({
   definition(t) {
@@ -12,6 +12,29 @@ export const Query = queryType({
             id: userId
           }
         });
+      }
+    });
+
+    t.field("helpRequests", {
+      type: "HelpRequest",
+      list: true,
+      args: {
+        matched: booleanArg({ nullable: true })
+      },
+      resolve: async (parent, { matched }, context) => {
+        const result = await context.photon.helpRequests.findMany({
+          where: { matched },
+          include: { owner: true, fulfiller: true }
+        });
+        return result;
+      }
+    });
+
+    t.field("currentConversation", {
+      type: "HelpRequest",
+      nullable: true,
+      resolve: (parent, args, context) => {
+        return getCurrentConversation(context);
       }
     });
   }

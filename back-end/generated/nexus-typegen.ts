@@ -3,15 +3,13 @@
  * Do not make changes to this file directly
  */
 
-import * as ctx from "../src/types"
-import * as photon from "@generated/photon"
-
-
+import * as ctx from "../src/types";
+import * as photon from "@generated/photon";
 
 declare global {
   interface NexusGenCustomOutputProperties<TypeName extends string> {
-    crud: NexusPrisma<TypeName, 'crud'>
-    model: NexusPrisma<TypeName, 'model'>
+    crud: NexusPrisma<TypeName, "crud">;
+    model: NexusPrisma<TypeName, "model">;
   }
 }
 
@@ -19,18 +17,18 @@ declare global {
   interface NexusGen extends NexusGenTypes {}
 }
 
-export interface NexusGenInputs {
-}
+export interface NexusGenInputs {}
 
-export interface NexusGenEnums {
-}
+export interface NexusGenEnums {}
 
 export interface NexusGenRootTypes {
-  AuthPayload: { // root type
+  AuthPayload: {
+    // root type
     token: string; // String!
-    user: NexusGenRootTypes['User']; // User!
-  }
+    user: NexusGenRootTypes["User"]; // User!
+  };
   HelpRequest: photon.HelpRequest;
+  Message: photon.Message;
   Mutation: {};
   Query: {};
   User: photon.User;
@@ -39,60 +37,128 @@ export interface NexusGenRootTypes {
   Float: number;
   Boolean: boolean;
   ID: string;
+  DateTime: any;
 }
 
-export interface NexusGenAllTypes extends NexusGenRootTypes {
-}
+export interface NexusGenAllTypes extends NexusGenRootTypes {}
 
 export interface NexusGenFieldTypes {
-  AuthPayload: { // field return type
+  AuthPayload: {
+    // field return type
     token: string; // String!
-    user: NexusGenRootTypes['User']; // User!
-  }
-  HelpRequest: { // field return type
-    fulfiller: NexusGenRootTypes['User'] | null; // User
-    healthScore: number; // Int!
+    user: NexusGenRootTypes["User"]; // User!
+  };
+  HelpRequest: {
+    // field return type
+    fulfiller: NexusGenRootTypes["User"] | null; // User
     id: string; // ID!
-    owner: NexusGenRootTypes['User']; // User!
-  }
-  Mutation: { // field return type
-    login: NexusGenRootTypes['AuthPayload']; // AuthPayload!
-    signup: NexusGenRootTypes['AuthPayload']; // AuthPayload!
-    submitHelpRequest: NexusGenRootTypes['HelpRequest'] | null; // HelpRequest
-  }
-  Query: { // field return type
-    me: NexusGenRootTypes['User']; // User!
-  }
-  User: { // field return type
+    matched: boolean; // Boolean!
+    messages: NexusGenRootTypes["Message"][] | null; // [Message!]
+    owner: NexusGenRootTypes["User"] | null; // User
+  };
+  Message: {
+    // field return type
+    body: string; // String!
+    createdAt: any; // DateTime!
+    id: string; // ID!
+    owner: NexusGenRootTypes["User"]; // User!
+    request: NexusGenRootTypes["HelpRequest"]; // HelpRequest!
+    updatedAt: any; // DateTime!
+  };
+  Mutation: {
+    // field return type
+    clearAlRequests: boolean; // Boolean!
+    login: NexusGenRootTypes["AuthPayload"]; // AuthPayload!
+    sendMessage: NexusGenRootTypes["Message"]; // Message!
+    signup: NexusGenRootTypes["AuthPayload"]; // AuthPayload!
+    submitHelpRequest: NexusGenRootTypes["HelpRequest"] | null; // HelpRequest
+  };
+  Query: {
+    // field return type
+    currentConversation: NexusGenRootTypes["HelpRequest"] | null; // HelpRequest
+    helpRequests: NexusGenRootTypes["HelpRequest"][]; // [HelpRequest!]!
+    me: NexusGenRootTypes["User"]; // User!
+  };
+  User: {
+    // field return type
     email: string; // String!
+    fulfilledRequests: NexusGenRootTypes["HelpRequest"][] | null; // [HelpRequest!]
+    helpRequests: NexusGenRootTypes["HelpRequest"][] | null; // [HelpRequest!]
     id: string; // ID!
     name: string | null; // String
-  }
+  };
 }
 
 export interface NexusGenArgTypes {
+  HelpRequest: {
+    messages: {
+      // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      skip?: number | null; // Int
+    };
+  };
   Mutation: {
-    login: { // args
+    login: {
+      // args
       email?: string | null; // String
       password?: string | null; // String
-    }
-    signup: { // args
+    };
+    sendMessage: {
+      // args
+      body?: string | null; // String
+      helpRequestId?: string | null; // ID
+    };
+    signup: {
+      // args
       email?: string | null; // String
       name?: string | null; // String
       password?: string | null; // String
-    }
-    submitHelpRequest: { // args
+    };
+    submitHelpRequest: {
+      // args
       healthScore: number; // Int!
-    }
-  }
+    };
+  };
+  Query: {
+    helpRequests: {
+      // args
+      matched?: boolean | null; // Boolean
+    };
+  };
+  User: {
+    fulfilledRequests: {
+      // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      skip?: number | null; // Int
+    };
+    helpRequests: {
+      // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      skip?: number | null; // Int
+    };
+  };
 }
 
-export interface NexusGenAbstractResolveReturnTypes {
-}
+export interface NexusGenAbstractResolveReturnTypes {}
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "AuthPayload" | "HelpRequest" | "Mutation" | "Query" | "User";
+export type NexusGenObjectNames =
+  | "AuthPayload"
+  | "HelpRequest"
+  | "Message"
+  | "Mutation"
+  | "Query"
+  | "User";
 
 export type NexusGenInputNames = never;
 
@@ -100,7 +166,13 @@ export type NexusGenEnumNames = never;
 
 export type NexusGenInterfaceNames = never;
 
-export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
+export type NexusGenScalarNames =
+  | "Boolean"
+  | "DateTime"
+  | "Float"
+  | "ID"
+  | "Int"
+  | "String";
 
 export type NexusGenUnionNames = never;
 
@@ -118,9 +190,19 @@ export interface NexusGenTypes {
   interfaceNames: NexusGenInterfaceNames;
   scalarNames: NexusGenScalarNames;
   unionNames: NexusGenUnionNames;
-  allInputTypes: NexusGenTypes['inputNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['scalarNames'];
-  allOutputTypes: NexusGenTypes['objectNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['unionNames'] | NexusGenTypes['interfaceNames'] | NexusGenTypes['scalarNames'];
-  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes']
-  abstractTypes: NexusGenTypes['interfaceNames'] | NexusGenTypes['unionNames'];
+  allInputTypes:
+    | NexusGenTypes["inputNames"]
+    | NexusGenTypes["enumNames"]
+    | NexusGenTypes["scalarNames"];
+  allOutputTypes:
+    | NexusGenTypes["objectNames"]
+    | NexusGenTypes["enumNames"]
+    | NexusGenTypes["unionNames"]
+    | NexusGenTypes["interfaceNames"]
+    | NexusGenTypes["scalarNames"];
+  allNamedTypes:
+    | NexusGenTypes["allInputTypes"]
+    | NexusGenTypes["allOutputTypes"];
+  abstractTypes: NexusGenTypes["interfaceNames"] | NexusGenTypes["unionNames"];
   abstractResolveReturn: NexusGenAbstractResolveReturnTypes;
 }
