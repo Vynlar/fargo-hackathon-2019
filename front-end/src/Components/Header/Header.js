@@ -25,15 +25,13 @@ const Header = () => {
 
   return (
     <FlexBox justifyContent="center">
-        <Typing>
-          <HeaderContainer>
-            <PulseDiv>
-            <div>
-              How are you feeling?
-            </div>
-            </PulseDiv>
-          </HeaderContainer>
-        </Typing>
+      <Typing>
+        <HeaderContainer>
+          <PulseDiv>
+            <div>How are you feeling?</div>
+          </PulseDiv>
+        </HeaderContainer>
+      </Typing>
     </FlexBox>
   );
 };

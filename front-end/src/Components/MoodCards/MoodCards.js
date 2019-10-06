@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from '@emotion/styled';
 import css from '@styled-system/css';
