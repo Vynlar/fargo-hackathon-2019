@@ -21,7 +21,8 @@ const ConversationButton = () => {
   return (
     <Query query={GET_CURRENT_CONVERSATION}>
       {({ loading, error, data }) => {
-        if (loading || error || !data.currentConversation) return '';
+        console.log(data);
+        if (loading || error || !data.currentConversation.matched) return '';
         return (
           <Link to={`/chat/${data.currentConversation.id}`}>
             View Current Conversation
