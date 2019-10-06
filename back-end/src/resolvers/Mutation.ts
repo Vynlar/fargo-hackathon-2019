@@ -174,11 +174,12 @@ export const Mutation = mutationType({
       }
     });
 
-    t.boolean("clearAlRequests", {
-      resolve: async (parent, args, context) => {
-        await context.photon.helpRequests.deleteMany({
-          where: { id: { contains: "" } }
-        });
+    t.boolean("deleteHelpRequest", {
+      args: {
+        id: idArg()
+      },
+      resolve: async (parent, { id }, context) => {
+        await context.photon.helpRequests.delete({ where: { id } });
         return true;
       }
     });

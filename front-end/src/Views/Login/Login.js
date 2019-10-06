@@ -118,7 +118,7 @@ const LoginPageContainer = props => {
     <Mutation mutation={LOGIN_MUTATION}>
       {(login, { error }) =>
         auth.isLoggedIn ? (
-          <Redirect to={'/private'} />
+          <Redirect to={'/main'} />
         ) : (
           <LoginPage
             login={values =>

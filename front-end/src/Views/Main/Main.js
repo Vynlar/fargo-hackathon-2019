@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import css from '@styled-system/css';
 import FlexBox from '../../Components/FlexBox';
 import Header from '../../Components/Header';
-import Footer from '../../Components/Footer';
 import MatchBoard from '../../Components/MatchBoard';
 import MoodBoard from '../../Components/MoodBoard';
+import ConversationButton from 'Components/ConversationButton';
 
 const breakpoints = [1150, 950, 850];
 const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`);
@@ -32,7 +32,7 @@ const Main = () => {
       <MainContainer>
         <Header marginBottom={8} />
         <MoodBoard />
-        <Footer />
+        <ConversationButton />
       </MainContainer>
     </FlexBox>
   );

@@ -28,7 +28,7 @@ type Message {
 }
 
 type Mutation {
-  clearAlRequests: Boolean!
+  deleteHelpRequest(id: ID): Boolean!
   login(email: String, password: String): AuthPayload!
   sendMessage(body: String, helpRequestId: ID): Message!
   signup(email: String, name: String, password: String): AuthPayload!

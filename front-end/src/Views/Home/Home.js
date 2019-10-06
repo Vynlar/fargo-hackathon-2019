@@ -46,31 +46,9 @@ function Home() {
         </Hover>
 
         {auth.isLoggedIn ? (
-          <>
-            <Query
-              query={gql`
-                {
-                  me {
-                    first_name
-                    last_name
-                  }
-                }
-              `}
-            >
-              {({ data, error, loading }) => (
-                <>
-                  {loading || error ? null : (
-                    <Text color="white" mt={5}>
-                      Welcome {data.me.first_name} {data.me.last_name}!
-                    </Text>
-                  )}
-                  <Button mt={30} mb={3} onClick={auth.logout} data-cy="logout">
-                    Logout
-                  </Button>
-                </>
-              )}
-            </Query>
-          </>
+          <Button mt={30} mb={3} onClick={auth.logout} data-cy="logout">
+            Logout
+          </Button>
         ) : (
           <>
             <Link to="/login">

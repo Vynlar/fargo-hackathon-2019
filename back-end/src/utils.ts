@@ -23,9 +23,11 @@ export const getCurrentConversation = async (context: Context) => {
       OR: [{ owner: { id: userId } }, { fulfiller: { id: userId } }],
       matched: true
     },
-    orderBy: { updatedAt: "desc" }
+    orderBy: { createdAt: "desc" }
   });
+
   console.log(matchedConversations);
+
   if (matchedConversations.length === 0) {
     return null;
   }
