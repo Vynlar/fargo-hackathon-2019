@@ -29,6 +29,7 @@ model HelpRequest {
   owner     User?     @relation("helpRequests")
   fulfiller User?     @relation("fulfilled")
   matched   Boolean
+  complete  Boolean
   messages  Message[]
 }
 

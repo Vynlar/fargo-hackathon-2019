@@ -52,6 +52,7 @@ export interface NexusGenFieldTypes {
     user: NexusGenRootTypes['User']; // User!
   }
   HelpRequest: { // field return type
+    complete: boolean; // Boolean!
     fulfiller: NexusGenRootTypes['User'] | null; // User
     id: string; // ID!
     matched: boolean; // Boolean!
@@ -67,6 +68,7 @@ export interface NexusGenFieldTypes {
     updatedAt: any; // DateTime!
   }
   Mutation: { // field return type
+    closeConversation: boolean; // Boolean!
     deleteHelpRequest: boolean; // Boolean!
     login: NexusGenRootTypes['AuthPayload']; // AuthPayload!
     sendMessage: NexusGenRootTypes['Message']; // Message!
@@ -98,6 +100,9 @@ export interface NexusGenArgTypes {
     }
   }
   Mutation: {
+    closeConversation: { // args
+      helpRequestId?: string | null; // ID
+    }
     deleteHelpRequest: { // args
       id?: string | null; // ID
     }

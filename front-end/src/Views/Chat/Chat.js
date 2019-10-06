@@ -17,6 +17,7 @@ const GET_CURRENT_CHAT = gql`
   query GetCurrentChat {
     currentConversation {
       id
+      complete
       owner {
         id
         name
@@ -87,15 +88,7 @@ const Chat = () => {
         {sendMessage => {
           return (
             <>
-              <Box position="absolute" top={20} left={20}>
-                <Link
-                  to="/main"
-                  css={css({ textDecoration: 'none', color: 'black' })}
-                >
-                  Back
-                </Link>
-              </Box>
-              <Query query={GET_CURRENT_CHAT} pollInterval={2000}>
+              <Query query={GET_CURRENT_CHAT} pollInterval={500}>
                 {({ loading, error, data, refetch }) => {
                   if (loading) return 'loading';
                   if (error) return 'error';
@@ -108,6 +101,17 @@ const Chat = () => {
                     const messages = chat.messages;
                     return (
                       <div>
+                        <Box position="absolute" top={20} left={20}>
+                          <Link
+                            to="/main"
+                            css={css({
+                              textDecoration: 'none',
+                              color: 'black',
+                            })}
+                          >
+                            Back
+                          </Link>
+                        </Box>
                         <FlexBox justifyContent="center" mb={4}>
                           <Text fontWeight="bold">{otherPerson.name}</Text>
                         </FlexBox>
@@ -125,6 +129,11 @@ const Chat = () => {
                               {body}
                             </Bubble>
                           ))}
+                          {chat.complete && (
+                            <Text color="grey" fontSize="14px" pb={4}>
+                              The conversation has ended.
+                            </Text>
+                          )}
                         </FlexBox>
                         <form
                           onSubmit={event => {
@@ -139,7 +148,14 @@ const Chat = () => {
                             setChatMessage('');
                           }}
                         >
-                          <FlexBox height="40px" alignItems="stretch" mb={3}>
+                          <FlexBox
+                            height="40px"
+                            alignItems="stretch"
+                            mb={3}
+                            css={css({
+                              display: chat.complete ? 'none' : 'flex',
+                            })}
+                          >
                             <input
                               type="text"
                               value={chatMessage}

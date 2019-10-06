@@ -11,6 +11,7 @@ type AuthPayload {
 scalar DateTime
 
 type HelpRequest {
+  complete: Boolean!
   fulfiller: User
   id: ID!
   matched: Boolean!
@@ -28,6 +29,7 @@ type Message {
 }
 
 type Mutation {
+  closeConversation(helpRequestId: ID): Boolean!
   deleteHelpRequest(id: ID): Boolean!
   login(email: String, password: String): AuthPayload!
   sendMessage(body: String, helpRequestId: ID): Message!
