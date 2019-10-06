@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from '@emotion/styled';
 import css from '@styled-system/css';
@@ -17,20 +18,17 @@ const MoodCard = styled(FlexBox)(
     }),
     ':active': css({
       boxShadow: '0 0px',
-    })
+    }),
   })
 );
 
-
 const MoodCards = props => {
   // eslint-disable-next-line react/prop-types
-return (
-
-  <MoodCard bg={`${props.bg}`}>
-    <p>{props.emoji}</p>
-  </MoodCard>
-
-);
+  return (
+    <MoodCard bg={`${props.bg}`}>
+      <p>{props.emoji}</p>
+    </MoodCard>
+  );
 };
 
 export default MoodCards;

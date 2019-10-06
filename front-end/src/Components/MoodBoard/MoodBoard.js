@@ -34,7 +34,7 @@ const MoodBoard = () => {
                 }}
                 style={{ textDecoration: 'none' }}
               >
-                <MoodCards bg={value} emoji={Emoji.unicode[emojis[index]]}/>
+                <MoodCards bg={value} emoji={Emoji.unicode[emojis[index]]} />
               </a>
             );
           }}
