@@ -16,6 +16,7 @@ import Home from 'Views/Home';
 import Login from 'Views/Login';
 import Private from 'Views/Private';
 import UserProfile from 'Views/UserProfile';
+import Chat from 'Views/Chat';
 import Main from 'Views/Main';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
                 path="/private/user/:userId"
                 component={UserProfile}
               />
+              <PrivateRoute exact path="/chat/:id" component={Chat} />
             </Switch>
           </ThemeProvider>
         </AuthProvider>

@@ -10,9 +10,7 @@ import { logout, getToken } from 'Components/AuthContext';
 
 // Set this to your graphql url
 const BASE_URL =
-  process.env.NODE_ENV !== 'production'
-    ? 'http://localhost:8000/graphql'
-    : '/graphql';
+  process.env.NODE_ENV !== 'production' ? 'http://localhost:4000' : '/';
 
 /**
  * @description Injects the Authorization header into the

@@ -1,7 +1,17 @@
 import React from 'react';
 import MoodCards from '../MoodCards';
 import FlexBox from '../../Components/FlexBox';
-import { Link } from 'react-router-dom';
+import { Mutation } from 'react-apollo';
+import { Redirect } from 'react-router-dom';
+import gql from 'graphql-tag';
+
+const SUBMIT_HELP_REQUEST = gql`
+  mutation SubmitHelpRequest($moodScore: Int!) {
+    submitHelpRequest(healthScore: $moodScore) {
+      id
+    }
+  }
+`;
 
 const MoodBoard = () => {
   const bgColors = [0, 1, 2, 3, 4];
@@ -9,9 +19,24 @@ const MoodBoard = () => {
   return (
     <FlexBox flexDirection="column" alignItems="center" mb="4" mx="3">
       {bgColors.map((value, index) => (
-        <Link key={index} to={`/`} style={{ textDecoration: 'none' }}>
-          <MoodCards bg={value} />
-        </Link>
+        <Mutation mutation={SUBMIT_HELP_REQUEST} key={index}>
+          {(submit, { loading, error, data }) => {
+            if (loading) return 'Loading';
+            if (error) return 'Error';
+            if (data)
+              return <Redirect to={`/chat/${data.submitHelpRequest.id}`} />;
+            return (
+              <a
+                onClick={() => {
+                  submit({ variables: { moodScore: index } });
+                }}
+                style={{ textDecoration: 'none' }}
+              >
+                <MoodCards bg={value} />
+              </a>
+            );
+          }}
+        </Mutation>
       ))}
     </FlexBox>
   );
