@@ -35,7 +35,7 @@ function App() {
                 path="/private/user/:userId"
                 component={UserProfile}
               />
-              <PrivateRoute exact path="/chat/:id" component={Chat} />
+              <PrivateRoute exact path="/chat" component={Chat} />
             </Switch>
           </ThemeProvider>
         </AuthProvider>

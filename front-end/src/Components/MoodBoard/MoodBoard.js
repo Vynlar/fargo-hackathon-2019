@@ -25,16 +25,15 @@ const MoodBoard = () => {
           {(submit, { loading, error, data }) => {
             if (loading) return 'Loading';
             if (error) return 'Error';
-            if (data)
-              return <Redirect to={`/chat/${data.submitHelpRequest.id}`} />;
+            if (data) return <Redirect to="/chat" />;
             return (
               <a
                 onClick={() => {
-                  submit({ variables: { moodScore: index } });
+                  submit({ variables: { moodScore: 4 - index } });
                 }}
                 style={{ textDecoration: 'none' }}
               >
-                <MoodCards bg={value} emoji={Emoji.unicode[emojis[index]]}/>
+                <MoodCards bg={value} emoji={Emoji.unicode[emojis[index]]} />
               </a>
             );
           }}

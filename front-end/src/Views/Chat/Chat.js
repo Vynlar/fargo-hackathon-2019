@@ -51,7 +51,7 @@ const Bubble = ({ name, children, me }) => {
   return (
     <FlexBox
       bg={me ? '4' : '0'}
-      color={me ? 'white' : 'black'}
+      color="black"
       py={2}
       px={3}
       borderRadius={16}
@@ -77,8 +77,7 @@ const Bubble = ({ name, children, me }) => {
   );
 };
 
-const Chat = ({ match }) => {
-  const helpRequestId = match.params.id;
+const Chat = () => {
   const [chatMessage, setChatMessage] = useState('');
 
   return (
@@ -126,7 +125,10 @@ const Chat = ({ match }) => {
                           onSubmit={event => {
                             event.preventDefault();
                             sendMessage({
-                              variables: { helpRequestId, chatMessage },
+                              variables: {
+                                helpRequestId: chat.id,
+                                chatMessage,
+                              },
                             }).then(() => refetch());
                             setChatMessage('');
                           }}
@@ -151,7 +153,7 @@ const Chat = ({ match }) => {
                             <button
                               type="submit"
                               css={css({
-                                bg: '0',
+                                bg: '4',
                                 py: 2,
                                 px: 3,
                                 borderRadius: '8px',
