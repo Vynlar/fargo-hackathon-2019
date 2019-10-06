@@ -7,7 +7,15 @@
   */
 import styled from '@emotion/styled';
 
-import { space, color, border, layout } from 'styled-system';
+import {
+  typography,
+  flex,
+  position,
+  space,
+  color,
+  border,
+  layout,
+} from 'styled-system';
 import styledSystemPropTypes from '@styled-system/prop-types';
 
 export const Box = styled('div')(
@@ -18,7 +26,10 @@ export const Box = styled('div')(
   space,
   color,
   layout,
-  border
+  border,
+  position,
+  typography,
+  flex
 );
 
 Box.propTypes = {

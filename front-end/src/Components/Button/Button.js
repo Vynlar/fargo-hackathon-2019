@@ -12,14 +12,14 @@ import {
 
 const Button = styled('button')(
   css({
-    bg: 'primary',
+    bg: '0',
     px: 4,
     height: 'field',
     borderRadius: 'normal',
     borderWidth: 0,
     textTransform: 'uppercase',
     fontSize: 1,
-    color: 'white',
+    color: 'black',
     letterSpacing: 1.5,
     fontWeight: 'bold',
     cursor: 'pointer',

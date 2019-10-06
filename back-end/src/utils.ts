@@ -1,5 +1,7 @@
 import { verify } from "jsonwebtoken";
-import { Context } from "../types";
+import { Context } from "./types";
+import * as moment from "moment";
+import { listenerCount } from "cluster";
 
 export const APP_SECRET = "appsecret321";
 
@@ -18,6 +20,29 @@ export function getUserId(context: Context) {
 
 export const getCurrentConversation = async (context: Context) => {
   const userId = getUserId(context);
+  const helpRequests = await context.photon.users
+    .findOne({ where: { id: userId } })
+    .helpRequests({ orderBy: { updatedAt: "desc" }, first: 1 });
+  const fulfilledRequests = await context.photon.users
+    .findOne({ where: { id: userId } })
+    .fulfilledRequests({ orderBy: { updatedAt: "desc" }, first: 1 });
+  const helpRequest = helpRequests[0];
+  const fulfilledRequest = fulfilledRequests[0];
+
+  let candidates = [];
+  if (helpRequest) candidates.push(helpRequest);
+  if (fulfilledRequest) candidates.push(fulfilledRequest);
+
+  if (candidates.length === 0) return null;
+  if (candidates.length === 1) return candidates[0];
+
+  if (moment(helpRequest.updatedAt).isAfter(fulfilledRequest.updatedAt)) {
+    return helpRequest;
+  } else {
+    return fulfilledRequest;
+  }
+
+  /*
   const matchedConversations = await context.photon.helpRequests.findMany({
     where: {
       OR: [{ owner: { id: userId } }, { fulfiller: { id: userId } }],
@@ -33,4 +58,5 @@ export const getCurrentConversation = async (context: Context) => {
   }
   const currentConversation = matchedConversations[0];
   return currentConversation;
+  */
 };
