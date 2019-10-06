@@ -112,7 +112,7 @@ const Chat = () => {
                         </FlexBox>
                         <FlexBox column css={css({ overflowY: 'auto', pt: 3 })}>
                           <Text color="grey" fontSize="14px" pb={4}>
-                            You have been connedted with {otherPerson.name}. Say
+                            You have been connected with {otherPerson.name}. Say
                             hi!
                           </Text>
                           {messages.map(({ id, body, owner }) => (
@@ -128,6 +128,7 @@ const Chat = () => {
                         <form
                           onSubmit={event => {
                             event.preventDefault();
+                            if (!chatMessage) return;
                             sendMessage({
                               variables: {
                                 helpRequestId: chat.id,
