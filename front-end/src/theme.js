@@ -12,15 +12,15 @@ const addAlias = (alias, index) => scale => {
 
 const theme = {
   colors: {
-    primary: '#f2bc23',
+    primary: 'lightBlue',
     neutral: 'wheat',
     blue: 'DodgerBlue',
-    white: 'FloralWhite',
-    0: 'SpringGreen',
-    1: 'MediumSpringGreen',
-    2: 'MediumSeaGreen',
-    3: 'SeaGreen',
-    4: '#6C8C6F',
+    white: 'Snow',
+    0: 'rgb(102, 255, 179)',
+    1: 'rgb(102, 255, 217)',
+    2: 'rgb(102, 255, 255)',
+    3: 'rgb(102, 217, 255)',
+    4: 'rgb(102, 179, 255)',
     lightestGrey: 'hsl(0, 0%, 95%)',
     lighterGrey: 'hsl(0, 0%, 80%)',
     lightGrey: 'hsl(0, 0%, 65%)',

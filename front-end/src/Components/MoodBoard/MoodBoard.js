@@ -4,6 +4,7 @@ import FlexBox from '../../Components/FlexBox';
 import { Mutation } from 'react-apollo';
 import { Redirect } from 'react-router-dom';
 import gql from 'graphql-tag';
+import Emoji from 'emoji-dictionary';
 
 const SUBMIT_HELP_REQUEST = gql`
   mutation SubmitHelpRequest($moodScore: Int!) {
@@ -15,6 +16,7 @@ const SUBMIT_HELP_REQUEST = gql`
 
 const MoodBoard = () => {
   const bgColors = [0, 1, 2, 3, 4];
+  const emojis = [14, 15, 41, 58, 73];
 
   return (
     <FlexBox flexDirection="column" alignItems="center" mb="4" mx="3">
@@ -32,7 +34,7 @@ const MoodBoard = () => {
                 }}
                 style={{ textDecoration: 'none' }}
               >
-                <MoodCards bg={value} />
+                <MoodCards bg={value} emoji={Emoji.unicode[emojis[index]]}/>
               </a>
             );
           }}
