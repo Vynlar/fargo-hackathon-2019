@@ -43,22 +43,4 @@ export const getCurrentConversation = async (context: Context) => {
   } else {
     return fulfilledRequest;
   }
-
-  /*
-  const matchedConversations = await context.photon.helpRequests.findMany({
-    where: {
-      OR: [{ owner: { id: userId } }, { fulfiller: { id: userId } }],
-      matched: true
-    },
-    orderBy: { createdAt: "desc" }
-  });
-
-  console.log(matchedConversations);
-
-  if (matchedConversations.length === 0) {
-    return null;
-  }
-  const currentConversation = matchedConversations[0];
-  return currentConversation;
-  */
 };
