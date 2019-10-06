@@ -192,8 +192,20 @@ const Chat = () => {
                   } else {
                     // we are waiting
                     return (
-                      <FlexBox column alignItems="center">
-                        Searching for a match...
+                      <FlexBox column alignItems="center" textAlign="center">
+                        <img
+                          src="https://media.giphy.com/media/o5oLImoQgGsKY/giphy.gif"
+                          css={css({
+                            width: 100,
+                            height: 100,
+                            borderRadius: '50%',
+                            objectFit: 'cover',
+                            mb: 4,
+                          })}
+                        />
+                        <Text fontSize={16} fontWeight="bold">
+                          Please wait while we <br /> find you a match :)
+                        </Text>
                       </FlexBox>
                     );
                   }

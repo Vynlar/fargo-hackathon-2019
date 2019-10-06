@@ -85,7 +85,7 @@ export const Mutation = mutationType({
             )
           )(
             await context.photon.helpRequests.findMany({
-              where: { matched: false },
+              where: { matched: false, complete: false },
               include: { fulfiller: true }
             })
           );
@@ -128,7 +128,7 @@ export const Mutation = mutationType({
             )
           )(
             await context.photon.helpRequests.findMany({
-              where: { matched: false },
+              where: { matched: false, complete: false },
               include: { owner: true }
             })
           );

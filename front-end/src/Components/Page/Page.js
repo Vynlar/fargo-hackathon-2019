@@ -18,9 +18,6 @@ const HeaderContainer = styled(FlexBox)(
 
 const Page = ({ children, ...props }) => (
   <FlexBox col width="100vw" bg="blue" minHeight="100vh" {...props}>
-    <HeaderContainer justifyContent="center" py={3}>
-      ReachOut
-    </HeaderContainer>
     <Box alignSelf="center">{children}</Box>
   </FlexBox>
 );

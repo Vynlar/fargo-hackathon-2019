@@ -8,8 +8,9 @@ const Input = styled(Field)(
     boxSizing: 'border-box',
   },
   css({
-    border: '1px solid',
-    borderColor: 'grey',
+    outline: 'none',
+    height: '40px',
+    border: 'none',
     mt: 2,
     mb: 1,
     px: 2,

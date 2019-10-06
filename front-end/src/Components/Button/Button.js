@@ -17,6 +17,7 @@ const Button = styled('button')(
     height: 'field',
     borderRadius: 'normal',
     borderWidth: 0,
+    width: '100%',
     textTransform: 'uppercase',
     fontSize: 1,
     color: 'black',
