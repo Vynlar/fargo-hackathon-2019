@@ -6,13 +6,13 @@ import FlexBox from '../../Components/FlexBox';
 
 const MoodCard = styled(FlexBox)(
   css({
-    height: '80px',
+    height: '60px',
     alignItems: 'center',
     justifyContent: 'center',
     width: '250px',
     m: '1',
-    borderRadius: 'normal',
-    fontSize: '50px',
+    borderRadius: '30px',
+    fontSize: '40px',
     ':hover': css({
       boxShadow: '0px 0px 10px 0px rgb(0, 0, 0, .75);',
     }),
