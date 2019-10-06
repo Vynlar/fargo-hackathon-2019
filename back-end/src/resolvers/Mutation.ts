@@ -85,12 +85,10 @@ export const Mutation = mutationType({
             )
           )(
             await context.photon.helpRequests.findMany({
-              where: { matched: false },
+              where: { matched: false, complete: false },
               include: { fulfiller: true }
             })
           );
-
-          console.log(openFulfilRequests);
 
           if (openFulfilRequests.length > 0) {
             // If there is an open fulfiller
@@ -105,7 +103,8 @@ export const Mutation = mutationType({
             return context.photon.helpRequests.create({
               data: {
                 owner: { connect: { id: userId } },
-                matched: false
+                matched: false,
+                complete: false
               }
             });
           }
@@ -129,7 +128,7 @@ export const Mutation = mutationType({
             )
           )(
             await context.photon.helpRequests.findMany({
-              where: { matched: false },
+              where: { matched: false, complete: false },
               include: { owner: true }
             })
           );
@@ -148,7 +147,8 @@ export const Mutation = mutationType({
             return context.photon.helpRequests.create({
               data: {
                 fulfiller: { connect: { id: userId } },
-                matched: false
+                matched: false,
+                complete: false
               }
             });
           }
@@ -181,6 +181,22 @@ export const Mutation = mutationType({
       resolve: async (parent, { id }, context) => {
         await context.photon.helpRequests.delete({ where: { id } });
         return true;
+      }
+    });
+
+    t.boolean("closeConversation", {
+      args: {
+        helpRequestId: idArg({ nullable: true })
+      },
+      resolve: async (parent, { helpRequestId }, context) => {
+        if (helpRequestId) {
+          await context.photon.helpRequests.update({
+            where: { id: helpRequestId },
+            data: { complete: true }
+          });
+          return true;
+        }
+        return false;
       }
     });
   }

@@ -9,8 +9,7 @@ import { ApolloLink, Observable } from 'apollo-link';
 import { logout, getToken } from 'Components/AuthContext';
 
 // Set this to your graphql url
-const BASE_URL =
-  process.env.NODE_ENV !== 'production' ? 'http://localhost:4000' : '/';
+const BASE_URL = '/graphql';
 
 /**
  * @description Injects the Authorization header into the

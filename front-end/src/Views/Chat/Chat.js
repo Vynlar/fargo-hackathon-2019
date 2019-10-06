@@ -17,6 +17,7 @@ const GET_CURRENT_CHAT = gql`
   query GetCurrentChat {
     currentConversation {
       id
+      complete
       owner {
         id
         name
@@ -87,15 +88,7 @@ const Chat = () => {
         {sendMessage => {
           return (
             <>
-              <Box position="absolute" top={20} left={20}>
-                <Link
-                  to="/main"
-                  css={css({ textDecoration: 'none', color: 'black' })}
-                >
-                  Back
-                </Link>
-              </Box>
-              <Query query={GET_CURRENT_CHAT} pollInterval={2000}>
+              <Query query={GET_CURRENT_CHAT} pollInterval={500}>
                 {({ loading, error, data, refetch }) => {
                   if (loading) return 'loading';
                   if (error) return 'error';
@@ -107,13 +100,24 @@ const Chat = () => {
                     // we know we are connected with someone
                     const messages = chat.messages;
                     return (
-                      <div>
+                      <div height="100%">
+                        <Box position="absolute" top={20} left={20}>
+                          <Link
+                            to="/main"
+                            css={css({
+                              textDecoration: 'none',
+                              color: 'black',
+                            })}
+                          >
+                            Back
+                          </Link>
+                        </Box>
                         <FlexBox justifyContent="center" mb={4}>
                           <Text fontWeight="bold">{otherPerson.name}</Text>
                         </FlexBox>
                         <FlexBox column css={css({ overflowY: 'auto', pt: 3 })}>
                           <Text color="grey" fontSize="14px" pb={4}>
-                            You have been connedted with {otherPerson.name}. Say
+                            You have been connected with {otherPerson.name}. Say
                             hi!
                           </Text>
                           {messages.map(({ id, body, owner }) => (
@@ -125,10 +129,16 @@ const Chat = () => {
                               {body}
                             </Bubble>
                           ))}
+                          {chat.complete && (
+                            <Text color="grey" fontSize="14px" pb={4}>
+                              The conversation has ended.
+                            </Text>
+                          )}
                         </FlexBox>
                         <form
                           onSubmit={event => {
                             event.preventDefault();
+                            if (!chatMessage) return;
                             sendMessage({
                               variables: {
                                 helpRequestId: chat.id,
@@ -138,7 +148,14 @@ const Chat = () => {
                             setChatMessage('');
                           }}
                         >
-                          <FlexBox height="40px" alignItems="stretch" mb={3}>
+                          <FlexBox
+                            height="40px"
+                            alignItems="stretch"
+                            mb={3}
+                            css={css({
+                              display: chat.complete ? 'none' : 'flex',
+                            })}
+                          >
                             <input
                               type="text"
                               value={chatMessage}
@@ -175,8 +192,20 @@ const Chat = () => {
                   } else {
                     // we are waiting
                     return (
-                      <FlexBox column alignItems="center">
-                        Searching for a match...
+                      <FlexBox column alignItems="center" textAlign="center">
+                        <img
+                          src="https://media.giphy.com/media/o5oLImoQgGsKY/giphy.gif"
+                          css={css({
+                            width: 100,
+                            height: 100,
+                            borderRadius: '50%',
+                            objectFit: 'cover',
+                            mb: 4,
+                          })}
+                        />
+                        <Text fontSize={16} fontWeight="bold">
+                          Please wait while we <br /> find you a match :)
+                        </Text>
                       </FlexBox>
                     );
                   }

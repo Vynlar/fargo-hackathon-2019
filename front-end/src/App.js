@@ -14,6 +14,7 @@ import PrivateRoute from 'Components/PrivateRoute';
 
 import Home from 'Views/Home';
 import Login from 'Views/Login';
+import Register from 'Views/Register';
 import Private from 'Views/Private';
 import UserProfile from 'Views/UserProfile';
 import Chat from 'Views/Chat';
@@ -29,6 +30,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
               <PrivateRoute exact path="/main" component={Main} />
               <PrivateRoute
                 exact

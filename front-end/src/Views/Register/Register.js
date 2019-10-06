@@ -25,14 +25,16 @@ const Header = styled.h1(
   })
 );
 
-export const LoginForm = ({ onSubmit }) => (
-  <Box minWidth={300} maxWidth={500} color="white">
+export const RegisterForm = ({ onSubmit }) => (
+  <Box minWidth={300} maxWidth={500}>
     <Formik
       initialValues={{
+        name: '',
         email: '',
         password: '',
       }}
       validationSchema={yup.object().shape({
+        name: yup.string().required('Name is required'),
         email: yup
           .string()
           .required('Email is required')
@@ -46,13 +48,15 @@ export const LoginForm = ({ onSubmit }) => (
       {({ isSubmitting }) => (
         <Form>
           <FlexBox flexDirection="column">
-            <Header>Login</Header>
+            <Header>Register</Header>
+
+            <Input name="name" type="name" placeholder="Username" autoFocus />
+            <ErrorMessage name="name" component="div" />
 
             <Input
               name="email"
               type="email"
               placeholder="Email"
-              autoFocus
               data-cy="email"
             />
             <ErrorMessage name="email" component="div" />
@@ -80,11 +84,11 @@ export const LoginForm = ({ onSubmit }) => (
     </Formik>
   </Box>
 );
-LoginForm.propTypes = {
+RegisterForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-function LoginPage({ login, error }) {
+function RegisterPage({ register, error }) {
   return (
     <FlexBox
       alignItems="center"
@@ -93,36 +97,36 @@ function LoginPage({ login, error }) {
       bg="blue"
       flexDirection="column"
     >
-      <LoginForm onSubmit={login} />
-      {error && <div>Invalid email or password</div>}
+      <RegisterForm onSubmit={register} />
+      {error && <div>Error occurred while registering</div>}
     </FlexBox>
   );
 }
-LoginPage.propTypes = {
-  login: PropTypes.func,
+RegisterPage.propTypes = {
+  register: PropTypes.func,
   error: PropTypes.object,
 };
 
-const LOGIN_MUTATION = gql`
-  mutation Login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+const REGISTER_MUTATION = gql`
+  mutation Register($name: String!, $email: String!, $password: String!) {
+    signup(name: $name, email: $email, password: $password) {
       token
     }
   }
 `;
 
-const LoginPageContainer = props => {
+const RegisterPageContainer = props => {
   const auth = useAuth();
   return (
-    <Mutation mutation={LOGIN_MUTATION}>
-      {(login, { error }) =>
+    <Mutation mutation={REGISTER_MUTATION}>
+      {(register, { error }) =>
         auth.isLoggedIn ? (
           <Redirect to={'/main'} />
         ) : (
-          <LoginPage
-            login={values =>
-              login({ variables: values }).then(res => {
-                const token = res.data.login.token;
+          <RegisterPage
+            register={values =>
+              register({ variables: values }).then(res => {
+                const token = res.data.signup.token;
                 auth.setToken(token);
               })
             }
@@ -135,4 +139,4 @@ const LoginPageContainer = props => {
   );
 };
 
-export default LoginPageContainer;
+export default RegisterPageContainer;

@@ -7,6 +7,7 @@ export const HelpRequest = objectType({
     t.model.owner();
     t.model.fulfiller();
     t.model.matched();
+    t.model.complete();
     t.model.messages();
   }
 });

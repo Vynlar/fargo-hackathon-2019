@@ -20,12 +20,14 @@ export function getUserId(context: Context) {
 
 export const getCurrentConversation = async (context: Context) => {
   const userId = getUserId(context);
+
   const helpRequests = await context.photon.users
     .findOne({ where: { id: userId } })
     .helpRequests({ orderBy: { updatedAt: "desc" }, first: 1 });
   const fulfilledRequests = await context.photon.users
     .findOne({ where: { id: userId } })
     .fulfilledRequests({ orderBy: { updatedAt: "desc" }, first: 1 });
+
   const helpRequest = helpRequests[0];
   const fulfilledRequest = fulfilledRequests[0];
 

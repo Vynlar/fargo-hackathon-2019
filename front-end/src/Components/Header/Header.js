@@ -1,10 +1,14 @@
 import React from 'react';
-import FlexBox from '../FlexBox/FlexBox';
 import styled from '@emotion/styled';
 import css from '@styled-system/css';
 import Typing from 'react-typing-animation';
 import { keyframes } from '@emotion/core';
 import { pulse } from 'react-animations';
+
+import Box from 'Components/Box';
+import FlexBox from 'Components/FlexBox';
+
+import Text from 'Components/Text';
 
 const Header = () => {
   const pulseAnimation = keyframes`${pulse}`;
@@ -13,11 +17,11 @@ const Header = () => {
     animation: 3s infinite ${pulseAnimation};
   `;
 
-  const HeaderContainer = styled(FlexBox)(
+  const HeaderContainer = styled(Box)(
     css({
       width: '100%',
       my: 3,
-      fontSize: 5,
+      fontSize: '24px',
       color: 'darkerGrey',
       justifyContent: 'center',
     })
@@ -28,8 +32,9 @@ const Header = () => {
       <Typing>
         <HeaderContainer>
           <PulseDiv>
-            <div>How are you feeling?</div>
+            <Text>How are you feeling?</Text>
           </PulseDiv>
+          <Text fontSize="16px">Select an option below to chat</Text>
         </HeaderContainer>
       </Typing>
     </FlexBox>

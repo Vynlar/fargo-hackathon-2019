@@ -12,14 +12,13 @@ datasource db {
 }
 
 model User {
-  id                  String        @default(cuid()) @id
-  email               String        @unique
-  password            String
-  name                String?
-  helpRequests        HelpRequest[] @relation("helpRequests")
-  fulfilledRequests   HelpRequest[] @relation("fulfilled")
-  messages            Message[]
-  currentConversation HelpRequest
+  id                String        @default(cuid()) @id
+  email             String        @unique
+  password          String
+  name              String?
+  helpRequests      HelpRequest[] @relation("helpRequests")
+  fulfilledRequests HelpRequest[] @relation("fulfilled")
+  messages          Message[]
 }
 
 model HelpRequest {
@@ -30,6 +29,7 @@ model HelpRequest {
   owner     User?     @relation("helpRequests")
   fulfiller User?     @relation("fulfilled")
   matched   Boolean
+  complete  Boolean
   messages  Message[]
 }
 
