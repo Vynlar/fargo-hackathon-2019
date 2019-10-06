@@ -91,7 +91,7 @@ function LoginPage({ login, error }) {
       alignItems="center"
       justifyContent="center"
       height="100vh"
-      bg="neutral"
+      bg="blue"
       flexDirection="column"
     >
       <LoginForm onSubmit={login} />
