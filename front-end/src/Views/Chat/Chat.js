@@ -111,6 +111,10 @@ const Chat = () => {
                           <Text fontWeight="bold">{otherPerson.name}</Text>
                         </FlexBox>
                         <FlexBox column css={css({ overflowY: 'auto', pt: 3 })}>
+                          <Text color="grey" fontSize="14px" pb={4}>
+                            You have been connedted with {otherPerson.name}. Say
+                            hi!
+                          </Text>
                           {messages.map(({ id, body, owner }) => (
                             <Bubble
                               name={owner.name}
