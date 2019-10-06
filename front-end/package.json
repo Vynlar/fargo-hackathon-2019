@@ -22,6 +22,7 @@
     "graphql": "^14.4.2",
     "graphql-anywhere": "^4.2.4",
     "graphql-tag": "^2.10.1",
+    "http-proxy-middleware": "^0.20.0",
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "ramda": "^0.26.1",

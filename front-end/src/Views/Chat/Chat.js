@@ -100,7 +100,7 @@ const Chat = () => {
                     // we know we are connected with someone
                     const messages = chat.messages;
                     return (
-                      <div>
+                      <div height="100%">
                         <Box position="absolute" top={20} left={20}>
                           <Link
                             to="/main"
