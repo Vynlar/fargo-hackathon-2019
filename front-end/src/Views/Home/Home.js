@@ -9,7 +9,6 @@ import Button from 'Components/Button';
 import Page from 'Components/Page';
 import { useAuth } from 'Components/AuthContext';
 
-
 function Home() {
   const auth = useAuth();
   /* The component below is a flexbox layout component built using `styled-system` */
